@@ -70,8 +70,18 @@
 
 ### Font
 
-- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+- Family: [League Spartan](https://fonts#google.com/specimen/League+Spartan)
 - Weights: 700 */
+
+@font-face {
+ font-family: LeagueSpartan;
+ src: url("./LeagueSpartan-VariableFont_wght.ttf")  format('truetype');
+}
+
+h1, h2, h3, h4, h5, button {
+ font-family: LeagueSpartan;
+ font-weight: 700;
+}
 
 * {
  margin: 0;
@@ -83,39 +93,70 @@ body {
  background: var(--main-bg);
 }
 
+#calculator {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 450px;
+ display: flex;
+ gap: 15px;
+ flex-direction: column;
+}
+
 #display {
+ padding: 21px;
+ border-radius: 12px;
  background: var(--screen-bg);
+ font-size: 60px;
+ color: var(--light-text);
 }
 
 #inputs {
+ border-radius: 12px;
+ padding: 21px;
  background: var(--toggle-keypad-bg);
  display: grid;
+ grid-template-columns: auto auto auto auto;
  gap: 18px;
 }
 
+button {
+ font-size: 32px;
+ cursor: pointer;
+ border-radius: 12px;
+}
+
 .action-input, .number-input {
+ color: var(--dark-text);
  width: 90px;
  height: 45px;
  background: var(--key-bg);
  box-shadow: 0 4px var(--key-shadow);
- border-radius: 12px;
 }
 
-.delete-button, .reset-button {
+#delete-button, #reset-button {
+ color: var(--light-text);
  height: 45px;
- background: var(--key-bg);
- box-shadow: 0 4px var(--key-shadow);
- border-radius: 12px;
+ background: var(--alt-key-bg);
+ box-shadow: 0 4px var(--alt-key-shadow);
 }
 
-.delete-button {
+#delete-button {
  width: 90px;
 }
 
-.reset-button {
- width: 234px;
+#reset-button {
+ color: var(--light-text);
+ grid-column-start: 1;
+ grid-column-end: 3;
 }
 
-.submit-button {
-
+#submit-button {
+ color: var(--light-text);
+ height: 45px;
+ background: var(--key-bg-toggle);
+ box-shadow: 0 4px var(--key-shadow-toggle);
+ grid-column-start: 3;
+ grid-column-end: 5;
 }

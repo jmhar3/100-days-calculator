@@ -7,7 +7,7 @@ export const Inputs = () => {
    <NumberInput number={7}/>
    <NumberInput number={8}/>
    <NumberInput number={9}/>
-   <button>DEL</button>
+   <button id="delete-button">DEL</button>
    <NumberInput number={4}/>
    <NumberInput number={5}/>
    <NumberInput number={6}/>
@@ -20,8 +20,8 @@ export const Inputs = () => {
    <NumberInput number={0}/>
    <ActionInput action="/"/>
    <ActionInput action="x"/>
-   <button>RESET</button>
-   <button>=</button>
+   <button id="reset-button">RESET</button>
+   <button id="submit-button">=</button>
   </div>
  )
 } 
