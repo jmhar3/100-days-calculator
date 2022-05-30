@@ -68,7 +68,15 @@ function App() {
         input: result(),
       };
     });
-  }, [action, prevInput, input]);
+  }, [setCalculatorState, action, prevInput, input]);
+
+  const handleResetClick = useCallback(() => {
+   setCalculatorState({
+    input: 0,
+    prevInput: null,
+    action: null,
+  })
+  }, [setCalculatorState])
 
   return (
     <div id="calculator">
@@ -77,6 +85,7 @@ function App() {
         handleNumberClick={handleNumberClick}
         handleActionClick={handleActionClick}
         handleSubmitClick={handleSubmitClick}
+        handleResetClick={handleResetClick}
       />
     </div>
   );

@@ -24,7 +24,7 @@ export const Inputs = (props) => {
       <NumberInput number={0} {...props} />
       <ActionInput action="/" {...props} />
       <ActionInput action="x" {...props} />
-      <button id="reset-button">RESET</button>
+      <button id="reset-button" onClick={handleResetClick}>RESET</button>
       <button id="submit-button" onClick={handleSubmitClick}>
         =
       </button>
