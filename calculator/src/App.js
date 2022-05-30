@@ -9,16 +9,10 @@ function App() {
     input: 0,
     prevInput: null,
     action: null,
-    result: null,
   });
-  const [displayValue, setDisplayValue] = useState(0);
   const [newAction, setNewAction] = useState(false);
 
-  const { input, prevInput, action, result } = calculatorState;
-
-  useEffect(() => {
-    result ? setDisplayValue(result) : setDisplayValue(input);
-  }, [result, input, setDisplayValue]);
+  const { input, prevInput, action } = calculatorState;
 
   const handleNumberClick = useCallback(
     (number) => {
@@ -62,7 +56,7 @@ function App() {
   );
 
   const handleSubmitClick = useCallback(() => {
-    const calculatedResult = () => {
+    const result = () => {
       switch (action) {
         case "x":
           return prevInput * input;
@@ -77,14 +71,14 @@ function App() {
     setCalculatorState((prevState) => {
       return {
         ...prevState,
-        result: calculatedResult(),
+        input: result(),
       };
     });
   }, [action, prevInput, input]);
 
   return (
     <div id="calculator">
-      <Display value={displayValue} />
+      <Display value={input} />
       <Inputs
         handleNumberClick={handleNumberClick}
         handleActionClick={handleActionClick}
