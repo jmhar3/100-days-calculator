@@ -16,28 +16,22 @@ function App() {
 
   const handleNumberClick = useCallback(
     (number) => {
-      if (newAction) {
-        setCalculatorState((prevState) => {
-          return {
-            ...prevState,
-            prevInput: input,
-            input: number,
-          };
-        });
-        setNewAction(false);
-      } else {
-        setCalculatorState((prevState) => {
+      const props = () => {
+        if (newAction) {
+          return { prevInput: input, input: number };
+        } else {
           return input
-            ? {
-                ...prevState,
-                input: parseInt(`${input}${number}`),
-              }
-            : {
-                ...prevState,
-                input: number,
-              };
-        });
-      }
+            ? { input: parseInt(`${input}${number}`) }
+            : { input: number };
+        }
+      };
+      setCalculatorState((prevState) => {
+        return {
+          ...prevState,
+          ...props(),
+        };
+      });
+      newAction && setNewAction(false);
     },
     [setCalculatorState, action, prevInput, input, setNewAction, newAction]
   );
@@ -65,7 +59,7 @@ function App() {
         case "-":
           return prevInput - input;
         case "+":
-         return (prevInput + input);
+          return prevInput + input;
       }
     };
     setCalculatorState((prevState) => {
