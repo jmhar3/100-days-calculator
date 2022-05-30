@@ -1,7 +1,7 @@
-export const Display = ({ result, input }) => {
+export const Display = ({ value }) => {
   return (
     <div id="display">
-      <h5>{result ? result : input}</h5>
+      <h5>{value ? value : 0}</h5>
     </div>
   );
 };

@@ -1,3 +1,7 @@
-export const NumberInput = ({ number }) => {
-  return <button className="number-input">{number}</button>;
+export const NumberInput = ({ number, handleNumberInput }) => {
+  return (
+    <button className="number-input" onClick={() => handleNumberInput(number)}>
+      {number}
+    </button>
+  );
 };
