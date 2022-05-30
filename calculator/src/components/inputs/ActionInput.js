@@ -1,6 +1,6 @@
-export const ActionInput = ({ action, handleActionButton }) => {
+export const ActionInput = ({ action, handleActionClick }) => {
   return (
-    <button className="action-input" onClick={() => handleActionButton(action)}>
+    <button className="action-input" onClick={() => handleActionClick(action)}>
       {action}
     </button>
   );

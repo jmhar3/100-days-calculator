@@ -2,14 +2,14 @@ import { NumberInput } from "./NumberInput";
 import { ActionInput } from "./ActionInput";
 
 export const Inputs = (props) => {
+  const { handleSubmitClick, handleDeleteClick, handleResetClick, handleDecimalClick } = props;
+
   return (
     <div id="inputs">
       <NumberInput number={7} {...props} />
       <NumberInput number={8} {...props} />
       <NumberInput number={9} {...props} />
-      <button id="delete-button" {...props}>
-        DEL
-      </button>
+      <button id="delete-button">DEL</button>
       <NumberInput number={4} {...props} />
       <NumberInput number={5} {...props} />
       <NumberInput number={6} {...props} />
@@ -18,14 +18,14 @@ export const Inputs = (props) => {
       <NumberInput number={2} {...props} />
       <NumberInput number={3} {...props} />
       <ActionInput action="-" {...props} />
-      <ActionInput action="." {...props} />
+      <button className="action-input" onClick={handleDecimalClick}>
+        .
+      </button>
       <NumberInput number={0} {...props} />
       <ActionInput action="/" {...props} />
       <ActionInput action="x" {...props} />
-      <button id="reset-button" {...props}>
-        RESET
-      </button>
-      <button id="submit-button" {...props}>
+      <button id="reset-button">RESET</button>
+      <button id="submit-button" onClick={handleSubmitClick}>
         =
       </button>
     </div>
