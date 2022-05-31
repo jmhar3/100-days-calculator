@@ -71,13 +71,19 @@ function App() {
   }, [setCalculatorState, action, prevInput, input]);
 
   const handleResetClick = useCallback(() => {
-   setCalculatorState({
-    input: 0,
-    prevInput: null,
-    action: null,
-  })
-  }, [setCalculatorState])
+    setCalculatorState({
+      input: 0,
+      prevInput: null,
+      action: null,
+    });
+  }, [setCalculatorState]);
 
+  const handleDeleteClick = useCallback(() => {
+    const removeLastInput = Number(input.toString().slice(0, -1));
+    setCalculatorState((prevState) => {
+      return { ...prevState, input: removeLastInput };
+    });
+  }, [setCalculatorState, input]);
   return (
     <div id="calculator">
       <Display value={input} />
@@ -86,6 +92,7 @@ function App() {
         handleActionClick={handleActionClick}
         handleSubmitClick={handleSubmitClick}
         handleResetClick={handleResetClick}
+        handleDeleteClick={handleDeleteClick}
       />
     </div>
   );

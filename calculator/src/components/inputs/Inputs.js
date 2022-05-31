@@ -9,7 +9,7 @@ export const Inputs = (props) => {
       <NumberInput number={7} {...props} />
       <NumberInput number={8} {...props} />
       <NumberInput number={9} {...props} />
-      <button id="delete-button">DEL</button>
+      <button id="delete-button" onClick={handleDeleteClick}>DEL</button>
       <NumberInput number={4} {...props} />
       <NumberInput number={5} {...props} />
       <NumberInput number={6} {...props} />
