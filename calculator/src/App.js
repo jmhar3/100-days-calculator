@@ -86,7 +86,7 @@ function App() {
   }, [setCalculatorState, input]);
   return (
     <div id="calculator">
-      <Display value={input} />
+      <h5 id="display">{input ? input : 0}</h5>
       <Inputs
         handleNumberClick={handleNumberClick}
         handleActionClick={handleActionClick}
