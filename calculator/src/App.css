@@ -143,12 +143,22 @@ button {
   box-shadow: 0 4px var(--key-shadow);
 }
 
+.action-input:hover,
+.number-input:hover {
+  background: hsl(26, 64%, 98%);
+}
+
 #delete-button,
 #reset-button {
   color: var(--light-text);
   height: 45px;
   background: var(--alt-key-bg);
   box-shadow: 0 4px var(--alt-key-shadow);
+}
+
+#delete-button:hover,
+#reset-button:hover {
+  background: hsl(226, 51%, 75%);
 }
 
 #delete-button {
@@ -167,4 +177,8 @@ button {
   box-shadow: 0 4px var(--key-shadow-toggle);
   grid-column-start: 3;
   grid-column-end: 5;
+}
+
+#submit-button:hover {
+  background: hsl(6, 77%, 65%);
 }
