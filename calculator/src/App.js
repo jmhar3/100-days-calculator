@@ -20,7 +20,9 @@ function App() {
         if (newAction) {
           return { prevInput: input, input: number };
         } else {
-          return { input: `${input && input}${number}` };
+          return input
+            ? { input: `${input}${number}` }
+            : { input: `${number}` };
         }
       };
       setCalculatorState((prevState) => {
