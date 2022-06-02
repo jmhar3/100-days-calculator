@@ -16,19 +16,20 @@ function App() {
 
   const handleNumberClick = useCallback(
     (number) => {
-      const props = () => {
+      const inputs = (prevState) => {
+        const { input } = prevState;
         if (newAction) {
-          return { prevInput: input, input: number };
+          return { prevInput: input, input: `${number}` };
         } else {
           return input
-            ? { input: `${input}${number}` }
+            ? { input: input + `${number}` }
             : { input: `${number}` };
         }
       };
       setCalculatorState((prevState) => {
         return {
           ...prevState,
-          ...props(),
+          ...inputs(prevState),
         };
       });
       newAction && setNewAction(false);
@@ -59,9 +60,12 @@ function App() {
         case "-":
           return prevInput - input;
         case "+":
-          return prevInput + input;
+          return +prevInput + +input;
       }
     };
+
+    // if result ends in .000... convert to integer
+
     setCalculatorState((prevState) => {
       return {
         ...prevState,
@@ -84,6 +88,14 @@ function App() {
       return { ...prevState, input: removeLastInput };
     });
   }, [setCalculatorState, input]);
+
+  const handleDecimalClick = useCallback(() => {
+    setCalculatorState((prevState) => {
+      const newInput = /[.]/.test(input) ? input : `${input}.`;
+      return { ...prevState, input: newInput };
+    });
+  }, [setCalculatorState, input]);
+
   return (
     <div id="calculator">
       <h5 id="display">{input ? input : 0}</h5>
@@ -93,6 +105,7 @@ function App() {
         handleSubmitClick={handleSubmitClick}
         handleResetClick={handleResetClick}
         handleDeleteClick={handleDeleteClick}
+        handleDecimalClick={handleDecimalClick}
       />
     </div>
   );
