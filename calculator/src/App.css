@@ -113,8 +113,9 @@ body {
   padding: 21px 21px 9px 21px;
   border-radius: 12px;
   background: var(--screen-bg);
-  font-size: 60px;
   color: var(--light-text);
+  font-size: 60px;
+  overflow: hidden;
 }
 
 #inputs {
