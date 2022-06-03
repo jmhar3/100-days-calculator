@@ -114,7 +114,10 @@ body {
   border-radius: 12px;
   background: var(--screen-bg);
   color: var(--light-text);
-  font-size: 60px;
+}
+
+#display h1 {
+ font-size: 60px;
   overflow: hidden;
 }
 

@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 import "./App.css";
+import { Header } from "./components/Header";
 import { Display } from "./components/Display";
 import { Inputs } from "./components/inputs/Inputs";
 
@@ -22,7 +23,7 @@ function App() {
           return { prevInput: input, input: `${number}` };
         } else {
           return input
-            ? { input: input + `${number}` }
+            ? { input: `${input}${number}` }
             : { input: `${number}` };
         }
       };
@@ -95,10 +96,17 @@ function App() {
       return { ...prevState, input: newInput };
     });
   }, [setCalculatorState, input]);
+  
+  const [colorTheme, setColorTheme] = useState("dark");
+
+  const handleColorTheme = useCallback((event) => {
+   setColorTheme(event.target.innerText);
+  }, [setColorTheme])
 
   return (
     <div id="calculator">
-      <h5 id="display">{input ? input : 0}</h5>
+      <Header colorTheme={colorTheme} handleColorTheme={handleColorTheme} />
+      <Display value={input} />
       <Inputs
         handleNumberClick={handleNumberClick}
         handleActionClick={handleActionClick}
