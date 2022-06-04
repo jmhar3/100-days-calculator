@@ -14,64 +14,38 @@
   --light-text: hsl(0, 0%, 100%);
 }
 
-/* ### Theme 2
+/* Theme 2 */
 
-#### Backgrounds
+/* :root {
+ --main-bg: hsl(0, 0%, 90%);
+ --toggle-keypad-bg: hsl(0, 5%, 81%);
+ --screen-bg: hsl(0, 0%, 93%);
+ --key-bg: hsl(185, 42%, 37%);
+ --key-shadow: hsl(185, 58%, 25%);
+ --alt-key-bg: hsl(45, 7%, 89%);
+ --alt-key-shadow: hsl(35, 11%, 61%);
+ --key-bg-toggle: hsl(25, 98%, 40%);
+ --key-shadow-toggle: hsl(25, 99%, 27%);
+ --dark-text: hsl(60, 10%, 19%);
+ --light-text: hsl(0, 0%, 100%);
+} */
 
-- Light gray (main background): hsl(0, 0%, 90%)
-- Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
-- Very light gray (screen background): hsl(0, 0%, 93%)
+/* Theme 3 */
 
-#### Keys
-
-- Dark moderate cyan (key background): hsl(185, 42%, 37%)
-- Very dark cyan (key shadow): hsl(185, 58%, 25%)
-
-- Orange (key background, toggle): hsl(25, 98%, 40%)
-- Dark orange (key shadow): hsl(25, 99%, 27%)
-
-- Light grayish yellow (key background): hsl(45, 7%, 89%)
-- Dark grayish orange (key shadow): hsl(35, 11%, 61%)
-
-#### Text
-
-- Very dark grayish yellow: hsl(60, 10%, 19%)
-- White (text): hsl(0, 0, 100%)
-
-### Theme 3
-
-#### Backgrounds
-
-- Very dark violet (main background): hsl(268, 75%, 9%)
-- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
-
-#### Keys
-
-- Dark violet (key background): hsl(281, 89%, 26%)
-- Vivid magenta (key shadow): hsl(285, 91%, 52%)
-
-- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
-- Soft cyan (key shadow): hsl(177, 92%, 70%)
-
-- Very dark violet (key background): hsl(268, 47%, 21%)
-- Dark magenta (key shadow): hsl(290, 70%, 36%)
-
-#### Text
-
-- Light yellow: hsl(52, 100%, 62%)
-- Very dark blue: hsl(198, 20%, 13%)
-- White (text): hsl(0, 0, 100%)
-
-## Typography
-
-### Body Copy
-
-- Font size (numbers): 32px
-
-### Font
-
-- Family: [League Spartan](https://fonts#google.com/specimen/League+Spartan)
-- Weights: 700 */
+/* :root {
+ --main-bg: hsl(268, 75%, 9%);
+ --toggle-keypad-bg: hsl(268, 71%, 12%);
+ --screen-bg: hsl(0, 0%, 93%);
+ --key-bg: hsl(281, 89%, 26%);
+ --key-shadow: hsl(285, 91%, 52%);
+ --alt-key-bg: hsl(268, 47%, 21%);
+ --alt-key-shadow: hsl(290, 70%, 36%);
+ --key-bg-toggle: hsl(176, 100%, 44%);
+ --key-shadow-toggle: hsl(177, 92%, 70%);
+ --yellow-text: hsl(52, 100%, 62%);
+ --blue-text: hsl(198, 20%, 13%);
+ --light-text: hsl(0, 0, 100%);
+} */
 
 @font-face {
   font-family: LeagueSpartan;

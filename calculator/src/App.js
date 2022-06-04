@@ -105,7 +105,7 @@ function App() {
 
   return (
     <div id="calculator">
-      <Header colorTheme={colorTheme} handleColorTheme={handleColorTheme} />
+      {/* <Header colorTheme={colorTheme} handleColorTheme={handleColorTheme} /> */}
       <Display value={input} />
       <Inputs
         handleNumberClick={handleNumberClick}
